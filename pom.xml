@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cloud</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>sims-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SIMS</name>
     <description>学生信息管理系统后台API服务</description>
