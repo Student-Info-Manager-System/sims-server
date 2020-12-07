@@ -1,0 +1,94 @@
+
+
+qiniu:
+  accesskey: "YrFY_0AAvHe5U2h23pBhxGk-ujWiDinTcoVXJJyD"
+  serectkey: "Fs4jO0vdtEbocs9oVycAW_0JgoATOtssUu_da3gb"
+  bucket: "sur"
+  cdn:
+    url: "http://qiniu.longxin.press/"
+
+
+cloud:
+  version: V1.0
+  api-version: V1.0
+  title: 学生信息管理系统 API 接口文档
+  desc: 学习开发的学生信息管理系统后台API接口文档
+  user:
+    author: 江浒一只猫
+    email: 1753047507@qq.com
+    url: http://localhost
+
+  jwt:
+    # 加密秘钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    # token有效时长，7天，单位秒
+    expire: 604800
+    header: Authorization
+  mail:
+    name: 知猫
+    address: longxin999999999@163.com
+    user: 江浒一只猫
+    use:
+      email: longxin999999999@163.com
+      key: JXDALNDCTENIPZTJ
+      host: smtp.163.com
+
+
+#是否开启 swagger-ui
+swagger:
+  enabled: true
+
+
+
+
+server:
+  #端口号
+  port: 8888
+  servlet:
+    session:
+      timeout: 300s
+
+spring:
+  datasource:
+    #    driver-class-name: com.mysql.jdbc.Driver
+    #    url: jdbc:mysql://localhost:3306/boot-stage?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/sims?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: longxin
+
+  redis:
+    #数据库索引
+    #    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: ''
+    #连接超时时间
+    timeout: 5000
+    jedis:
+      pool:
+        max-idle: 8
+  data:
+    elasticsearch:
+      cluster-name: myes
+      #      cluster-nodes: 127.0.0.1:9300
+      cluster-nodes: hadoop137:9300,hadoop138:9300,hadoop139:9300
+
+
+
+mybatis-plus:
+  mapper-locations: classpath*:com/cloud/sims/business/module/**/mapper/xml/*.xml,classpath*:com/cloud/sims/system/**/mapper/xml/*.xml
+  #  #实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: classpath*:com.cloud.sims.**.**.entity
+  #  mapper-locations: classpath:mapper/blog/*.xml
+  #Mybatis 日志打印
+  type-enums-package: classpath*:com/cloud/sims/business/module/pojo/em/**
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+
+
+
+
